@@ -1,0 +1,50 @@
+<!-- <!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/my_style.css' %}">
+    <title>Django static files - images</title>
+</head>
+<body>
+    <h1>This is Django the super talented guitarist of the 20th century!</h1>
+    <img src="{% static 'images/django.jpeg' %}" alt="Image not found!">
+</body>
+</html> -->
+<!--  -->
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Django Level Two</title>
+    <link rel="stylesheet" href="{% static 'css/my_style.css' %}"/>
+  </head>
+  <body>
+    <h1>Django Models-Templates-Views</h1>
+    <h2>Below are the requested access records:</h2>
+    <div class="1stApp">
+      {% if access_records %}
+          <table>
+            <thead>
+              <th>Website Name</th>
+              <th>Date Created</th>
+            </thead>
+
+            {% for acc in access_records %}
+              <tr>
+                <td>{{ acc.name }}</td>
+                <td>{{ acc.date }}</td>
+              </tr>
+            {% endfor %}
+        </table>
+
+      {% else %}
+        <p>No Access Records. Table Not Created.</p>
+      {% endif %}
+    </div>
+
+
+  </body>
+</html>
